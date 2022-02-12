@@ -195,10 +195,10 @@ testRunner.When("User click on Написати листа button", ((string)(nu
 testRunner.And("User enter \"gustavfergusson@ukr.net\" e-mail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
-testRunner.And(string.Format("User enter {0} of message", theme), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("User enter \'{0}\' of message", theme), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
-testRunner.And(string.Format("User enter {0}", messageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("User enter \'{0}\'", messageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
 testRunner.And("User click Надіслати листа button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -248,10 +248,13 @@ testRunner.Then("User on Home page", ((string)(null)), ((TechTalk.SpecFlow.Table
 testRunner.When("User click Вхідні section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
-testRunner.And("User click on third message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("User see all incoming messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
-testRunner.Then("User see all incoming messages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("User click on first message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 45
+testRunner.Then("User see content of message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

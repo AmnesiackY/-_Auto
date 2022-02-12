@@ -21,30 +21,7 @@ namespace Хакатон_Auto
         public void ClickSendMessageButton()
         {
             sendMessageButton.Click();
-        }
-        public void EnterRecipient(string p0)
-        {
-            IWebElement recipient = DriverHolder.driver.FindElement(By.XPath("//section/div/div[4]"));
-            recipient.Click();
-            recipient.SendKeys(p0);
-        }
-        public void EnterThemeMessage(string p0)
-        {
-            IWebElement themeMessage = DriverHolder.driver.FindElement(By.Name("subject"));
-            themeMessage.Click();
-            themeMessage.SendKeys(p0);
-        }
-        public void EnterTextMessage(string p0)
-        {
-            IWebElement workSpaceMessage = DriverHolder.driver.FindElement(By.Id("tinymce"));
-            workSpaceMessage.Click();
-            workSpaceMessage.SendKeys(p0);
-        }
-        public void ClickApproveSendMessageButoon()
-        {
-            IWebElement sendMessageApproveButton = DriverHolder.driver.FindElement(By.XPath("//button[contains(.,'Надіслати')]"));
-            sendMessageApproveButton.Click();
-        }
+        }        
         public void ClickIncomingSection()
         {
             incomingMessagesSection.Click();

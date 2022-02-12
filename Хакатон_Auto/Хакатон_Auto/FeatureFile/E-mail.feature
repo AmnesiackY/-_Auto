@@ -26,8 +26,8 @@ Scenario Outline: Write three letters to yourself
 Then User on Home page 
 When User click on Написати листа button
 And User enter "gustavfergusson@ukr.net" e-mail
-And User enter <theme> of message
-And User enter <message text>
+And User enter '<theme>' of message
+And User enter '<message text>'
 And User click Надіслати листа button
 Then User on the sending confirmation page
 
@@ -40,5 +40,6 @@ Examples:
 Scenario: Check content in letters
 Then User on Home page  
 When User click Вхідні section
-And User click on third message
 Then User see all incoming messages
+When User click on first message
+Then User see content of message
