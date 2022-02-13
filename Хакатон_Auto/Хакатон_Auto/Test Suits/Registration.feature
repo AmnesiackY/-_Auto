@@ -17,14 +17,14 @@ In order to see my friend in Players table
 Scenario: Successful registration to the site
 	Given User on "http://sluipgenius.pp.ua' page
 	Then User on Welcome Page
-	When User click Start button
+	When User click 'Start' button
 	And User click Sign Up
 	Then User on Sign Up page
 	When User enter Login in login field
 	And User enter Email in email field
 	And User enter <Password> in password field
 	And User enter <RePassword> in repassword field
-	And User click on Submit button
+	And User click on 'Submit'' button
 	Then User see message about confirmation email
 	When User approve message in him email 
 	And User click on message link 
@@ -37,7 +37,7 @@ Scenario: Successful registration to the site
 	And User choose day of Birthday
 	And User click on Gender select menu
 	And User choose Gender
-	And User click on Submit(2) button
+	And User click on 'Submit' button
 	Then User on LogIn page
 	And User is authorized
 	Examples: 
