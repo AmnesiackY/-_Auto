@@ -14,7 +14,7 @@ I want to register myself
 In order to see my friend in Players table
 
 @smoke @regression
-Scenario: Successful registration to the site
+Scenario Outline: Successful registration to the site
 	Given User on "http://sluipgenius.pp.ua' page
 	Then User on Welcome Page
 	When User click 'Start' button
