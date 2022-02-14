@@ -22,15 +22,15 @@ Scenario: Successful registration to the site
 	Then User on Sign Up page
 	When User enter Login in login field
 	And User enter Email in email field
-	And User enter <Password> in password field
-	And User enter <RePassword> in repassword field
+	And User enter '<Password>' in password field
+	And User enter '<RePassword>' in repassword field
 	And User click on 'Submit'' button
 	Then User see message about confirmation email
 	When User approve message in him email 
 	And User click on message link 
 	Then User on Additional Information page
-	When User enter <FirstName> in firstname field
-	And User enter <LastName> in lastname field
+	When User enter '<FirstName>' in firstname field
+	And User enter '<LastName>' in lastname field
 	And User click on Date of Birthday field
 	And User choose year of Birthday
 	And User choose month of Birthday

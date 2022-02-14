@@ -13,7 +13,12 @@ Scenario Outline: Successful password recovery on the site
 	When User enter '<Email>' in email field
 	And User click 'Submit' button
 	Then User see notification about message for restore password
-	And User on LogIn page
+	When User click on link in message from server
+	Then User on New Password page
+	When User enter '<New Password>' in new password field
+	And User enter '<New RePassword>' in new repassword field
+	And User click '<Sumbit>' button
+	Then User on LogIn page
 	Examples: 
-	| Emmail                    |
+	| Email                    |
 	| qweqwe322322322@gmail.com |
