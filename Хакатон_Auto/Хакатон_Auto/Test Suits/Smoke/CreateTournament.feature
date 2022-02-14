@@ -12,7 +12,10 @@ Scenario Outline: Create cup tournament by admin
 	And User click on 'Submit' button
 	Then User on TournamentList page
 	When User click on 'Create Tournament' button
-	Then User on Create Tournament page
+	And User enter data to fields
+	And User click 'Submit' button
+	Then User on Tournamnet List page
+	And Created Tournamet in Tournament List
 
 	 
 	Examples: 

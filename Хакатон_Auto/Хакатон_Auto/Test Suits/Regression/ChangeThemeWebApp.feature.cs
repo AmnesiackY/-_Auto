@@ -19,7 +19,7 @@ namespace Хакатон_Auto.TestSuits.Regression
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ChangeHUDThemeFeature : object, Xunit.IClassFixture<ChangeHUDThemeFeature.FixtureData>, System.IDisposable
+    public partial class ChangeThemeWebAppFeature : object, Xunit.IClassFixture<ChangeThemeWebAppFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Хакатон_Auto.TestSuits.Regression
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ChangeTheme.feature"
+#line 1 "ChangeThemeWebApp.feature"
 #line hidden
         
-        public ChangeHUDThemeFeature(ChangeHUDThemeFeature.FixtureData fixtureData, Хакатон_Auto_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ChangeThemeWebAppFeature(ChangeThemeWebAppFeature.FixtureData fixtureData, Хакатон_Auto_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,8 @@ namespace Хакатон_Auto.TestSuits.Regression
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test Suits/Regression", "ChangeHUDTheme", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test Suits/Regression", "ChangeThemeWebApp", "As a user \r\nI want to have possibility to change color theme \r\nIn order to let my" +
+                    " eyes feel more convenient", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,17 +81,25 @@ namespace Хакатон_Auto.TestSuits.Regression
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
-        [Xunit.TraitAttribute("FeatureTitle", "ChangeHUDTheme")]
-        [Xunit.TraitAttribute("Description", "[scenario name]")]
-        [Xunit.TraitAttribute("Category", "tag1")]
-        public virtual void ScenarioName()
+        [Xunit.SkippableTheoryAttribute(DisplayName="Change Web-app theme")]
+        [Xunit.TraitAttribute("FeatureTitle", "ChangeThemeWebApp")]
+        [Xunit.TraitAttribute("Description", "Change Web-app theme")]
+        [Xunit.TraitAttribute("Category", "regression")]
+        [Xunit.InlineDataAttribute("gustavfergusson@gmail.com", "zxcvbN12345678", new string[0])]
+        public virtual void ChangeWeb_AppTheme(string email, string password, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] @__tags = new string[] {
+                    "regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Web-app theme", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -110,14 +119,26 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("[context]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.When("[action]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 9
- testRunner.Then("[outcome]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("User on page \"http://sluipgenius.pp.ua/signIn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 10
+ testRunner.When(string.Format("User enters \'{0}\' in the email field", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+ testRunner.And(string.Format("User enters \'{0}\' in the password field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+ testRunner.And("User click on \'Submit\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.Then("User on TournamentList page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 14
+ testRunner.When("User click on theme toggler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
+ testRunner.Then("Theme changes on dark variant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -130,12 +151,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ChangeHUDThemeFeature.FeatureSetup();
+                ChangeThemeWebAppFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ChangeHUDThemeFeature.FeatureTearDown();
+                ChangeThemeWebAppFeature.FeatureTearDown();
             }
         }
     }

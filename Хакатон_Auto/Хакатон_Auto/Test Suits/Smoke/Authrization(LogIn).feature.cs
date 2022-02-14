@@ -285,7 +285,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 44
- testRunner.Given("user is on the Log in screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User on page \"http://sluipgenius.pp.ua/signIn\"ngcvhgfhf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 45
  testRunner.When(string.Format("user enters \'{0}\' in the Email field", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -89,8 +89,8 @@ namespace Хакатон_Auto.TestSuits.Regression
         [Xunit.TraitAttribute("Description", "Successful password recovery on the site")]
         [Xunit.TraitAttribute("Category", "smoke")]
         [Xunit.TraitAttribute("Category", "regression")]
-        [Xunit.InlineDataAttribute("qweqwe322322322@gmail.com", new string[0])]
-        public virtual void SuccessfulPasswordRecoveryOnTheSite(string email, string[] exampleTags)
+        [Xunit.InlineDataAttribute("qweqwe322322322@gmail.com", "qwertY87654321", "qwertY87654321", new string[0])]
+        public virtual void SuccessfulPasswordRecoveryOnTheSite(string email, string newPassword, string newRePassword, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "smoke",
@@ -102,6 +102,8 @@ namespace Хакатон_Auto.TestSuits.Regression
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("New Password", newPassword);
+            argumentsOfScenario.Add("New RePassword", newRePassword);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful password recovery on the site", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -148,10 +150,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("User on New Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
- testRunner.When("User enter \'<New Password>\' in new password field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User enter \'{0}\' in new password field", newPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
- testRunner.And("User enter \'<New RePassword>\' in new repassword field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enter \'{0}\' in new repassword field", newRePassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
  testRunner.And("User click \'<Sumbit>\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
