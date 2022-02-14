@@ -20,5 +20,5 @@ Scenario Outline: Successful password recovery on the site
 	And User click '<Sumbit>' button
 	Then User on LogIn page
 	Examples: 
-	| Email                    |
-	| qweqwe322322322@gmail.com |
+	| Email                     | New Password   | New RePassword |
+	| qweqwe322322322@gmail.com | qwertY87654321 | qwertY87654321 |

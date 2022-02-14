@@ -41,7 +41,7 @@ Scenario: Authorization with the empty fields
 
 @regression
 Scenario Outline: Authorization with the invalid data
-	Given user is on the Log in screen
+	Given User on page "http://sluipgenius.pp.ua/signIn"ngcvhgfhf
 	When user enters '<Email>' in the Email field
 	And user enters '<Password>' in the Password field
 	And user clicks on the Sign in button

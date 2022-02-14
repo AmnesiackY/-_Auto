@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Хакатон_Auto.TestSuits
+namespace Хакатон_Auto.TestSuits.Smoke
 {
     using TechTalk.SpecFlow;
     using System;
@@ -42,7 +42,7 @@ namespace Хакатон_Auto.TestSuits
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test Suits", "Registration", "As a user \r\nI want to register myself \r\nIn order to create a tournament\r\n\r\nAs a u" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test Suits/Smoke", "Registration", "As a user \r\nI want to register myself \r\nIn order to create a tournament\r\n\r\nAs a u" +
                     "ser \r\nI want to register myself \r\nIn order to check tournament list\r\n\r\nAs a user" +
                     " \r\nI want to register myself \r\nIn order to see my friend in Players table", ProgrammingLanguage.CSharp, new string[] {
                         "highpriority"});
@@ -85,17 +85,36 @@ namespace Хакатон_Auto.TestSuits
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Successful registration to the site")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Successful registration to the site")]
         [Xunit.TraitAttribute("FeatureTitle", "Registration")]
         [Xunit.TraitAttribute("Description", "Successful registration to the site")]
         [Xunit.TraitAttribute("Category", "smoke")]
         [Xunit.TraitAttribute("Category", "regression")]
-        public virtual void SuccessfulRegistrationToTheSite()
+        [Xunit.InlineDataAttribute("Aboba1", "Abobovi4", "zxcvbn123", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Aboba2", "Abobovich", "zxcvbn123", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Dima1", "Tsarenko1", "zxcvbn456", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Dima2", "Tsarenko2", "zxcvbn456", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Ilia1", "Tverdohleb1", "zxcvbn789", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Ilia2", "Tverdohleb2", "zxcvbn789", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Yaroslav1", "Yarovyi1", "qwerty123", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Yaroslav2", "Yarovyi2", "qwerty123", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Oleg1", "Khizhnyi1", "qwerty456", "RePassword", new string[0])]
+        [Xunit.InlineDataAttribute("Oleg2", "Khizhnyi2", "qwerty456", "RePassword", new string[0])]
+        public virtual void SuccessfulRegistrationToTheSite(string firstName, string lastName, string password, string rePassword, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "smoke",
                     "regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("FirstName", firstName);
+            argumentsOfScenario.Add("LastName", lastName);
+            argumentsOfScenario.Add("Password", password);
+            argumentsOfScenario.Add("RePassword", rePassword);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful registration to the site", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 17
 this.ScenarioInitialize(scenarioInfo);
@@ -124,7 +143,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("User on Welcome Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 20
- testRunner.When("User click Start button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click \'Start\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
  testRunner.And("User click Sign Up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -139,19 +158,58 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("User enter Email in email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
- testRunner.And("User enter <Password> in password field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enter \'{0}\' in password field", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
- testRunner.And("User enter <RePassword> in repassword field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User enter \'{0}\' in repassword field", rePassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
- testRunner.And("User click on Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click on \'Submit\'\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
  testRunner.Then("User see message about confirmation email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 29
  testRunner.When("User approve message in him email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
+ testRunner.And("User click on message link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+ testRunner.Then("User on Additional Information page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 32
+ testRunner.When(string.Format("User enter \'{0}\' in firstname field", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+ testRunner.And(string.Format("User enter \'{0}\' in lastname field", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
+ testRunner.And("User click on Date of Birthday field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
+ testRunner.And("User choose year of Birthday", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.And("User choose month of Birthday", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.And("User choose day of Birthday", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 38
+ testRunner.And("User click on Gender select menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 39
+ testRunner.And("User choose Gender", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 40
+ testRunner.And("User click on \'Submit\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+ testRunner.Then("User on LogIn page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 42
+ testRunner.And("User is authorized", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
